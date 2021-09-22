@@ -7,22 +7,18 @@ public class BasicAndFunctional {
     {
         //Create an object of scanner class
         Scanner sc=new Scanner(System.in);
-        System.out.println("enter  Value 1 and Value 2 : ");
+        System.out.println("enter Number : ");
         int Num1=sc.nextInt();
-        int Num2=sc.nextInt();
-
-        QuotientRemainder(Num1,Num2);
+        evenOdd(Num1);
     }
-    static void QuotientRemainder(int a,int b)
+    static void evenOdd(int Num)
     {
-        int t;
-        t=a;
-        a=b;
-        b=t;
-        System.out.println();
-        System.out.println("after swapping " +a+" " +b);
+        if (Num%2 == 0){
+            System.out.println("Even Number :" +Num);
+        }else {
+            System.out.println("Odd Number : " +Num);
+        }
     }
-
     }
 
 
