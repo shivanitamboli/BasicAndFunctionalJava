@@ -5,21 +5,25 @@ import java.util.Scanner;
 public class BasicAndFunctional {
 	public static void main(String[] args)
     {
-        //Create an object of scanner class
-        Scanner sc=new Scanner(System.in);
-        System.out.println("enter Alphabet : ");
-        char Alp = sc.next().charAt(0);
-        vowelConsonant(Alp);
-    }
-    static void vowelConsonant(char Alp)
-    {
-        if (Alp == 'a' || Alp == 'e' || Alp == 'i' || Alp == 'o' || Alp == 'u' || Alp == 'A' || Alp == 'E' || Alp == 'I'
-                || Alp == 'O' || Alp == 'U') {
-            System.out.println(Alp + " is vowel");
-        } else if ((Alp >= 'a' && Alp <= 'z') || (Alp >= 'A' && Alp <= 'Z')) {
-            System.out.println(Alp + " is consonant");
-        } else {
-            System.out.println(Alp + " is not an alphabet");
+        int a, b, c;
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter first number:");
+        a = input.nextInt();
+        System.out.print("Enter the second number:");
+        b = input.nextInt();
+        System.out.print("Enter the third number:");
+        c = input.nextInt();
+        if(a > b && a >c)
+        {
+            System.out.println("Largest number is:"+a);
+        }
+        else if(a > c)
+        {
+            System.out.println("Largest number is:"+b);
+        }
+        else
+        {
+            System.out.println("Largest number is:"+c);
         }
     }
     }
