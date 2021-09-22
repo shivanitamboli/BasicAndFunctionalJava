@@ -3,41 +3,43 @@ package com.bridgelazbasicandfun;
 import java.util.Scanner;
 
 public class BasicAndFunctional {
-	static Scanner sc = new Scanner(System.in);
+	static void sunOfThree(int n[]) {
+        int count=0;
+        for (int i = 0; i < n.length-2; i++)
+        {
+            for (int j = i+1; j < n.length-1; j++)
+            {
+                for (int k =j+1; k < n.length; k++)
+                {
+                    if(n[i]+n[j]+n[k]==0)
+                    {
+                        System.out.println(n[i]+" + "+n[j]+" + "+n[k]+" = " +0);
+
+                        count++;
+                    }
+                }
+            }
+
+        }
+        System.out.println("The number of triple count ="+count);
+
+    }
     public static void main(String[] args) {
-        /*
-        *row and cols size
-        * using Scanner object class
-         */
-        System.out.println("Enter The Row Size : ");
-        int M = sc.nextInt();
-        System.out.println("Enter The Column Size : ");
-        int N = sc.nextInt();
-        getArray(M,N);
-    }
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter Array length");
+        int len=sc.nextInt();
+        int n[]=new int[len];
 
-
-    static void getArray(int X, int Y){
-        /*
-        *enter input in array
-        * and store it
-         */
-        int [] [] arr = new int[X][Y];
-        for (int i=0; i<X;i++){
-            for (int j=0; j<Y;j++){
-                System.out.print("Enter value : "+i+" "+j+" : ");      // for printing every position
-                arr[i][j]= sc.nextInt();
-            }
+        System.out.println("Enter the "+len+" Array ");
+        for (int i = 0; i < n.length; i++)
+        {
+            n[i]=sc.nextInt();
         }
-        sc.close();
-        for (int i=0; i<X;i++) {
-            for (int j = 0; j < Y; j++) {
-                System.out.print(arr[i][j] + " "); //display array in 2D
-            }
-            System.out.println(" ");
+        sunOfThree(n);
+
         }
     }
-    }
+    
     
 
 
