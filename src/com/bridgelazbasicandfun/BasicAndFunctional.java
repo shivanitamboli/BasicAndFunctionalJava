@@ -4,28 +4,30 @@ import java.util.Scanner;
 
 public class BasicAndFunctional {
 	public static void main(String[] args) {
-        /* that takes two integer command-line
-         * arguments x and y
-         */
+        double v, t;
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the integer for x");
-        int x = sc.nextInt();
-        System.out.println("Enter the integer for x");
-        int y = sc.nextInt();
-        calDistance(x, y);
+        System.out.println("Enter temperature in Fahrenheit");
+        t = sc.nextDouble();
+        System.out.println("Enter wind speed");
+        v = sc.nextDouble();
+        windchill(t, v);
         sc.close();
     }
 
-    private static void calDistance(int x, int y) {
-        /* prints the Euclidean distance from the point (x, y) to
-         * the origin (0, 0). The formulae to calculate
-         * distance = sqrt(x*x + y*y). Use Math.power function
-         */
-        double res = (Math.sqrt((Math.pow(x, 2)) + (Math.pow(y, 2))));
-        System.out.println("The Euclidean distance is: " + res);
+    public static void windchill(double t, double v) {
+        if (t > 50 || v < 3 || v > 120)
+            System.out.println("Invalid Input Please " +
+                    "Enter tem below 50 and wind above 3 and below 120");
+        else {
+            double w = 35.74 + 0.6215 * t + ((0.4275 * t - 35.75) * Math.pow(v, 0.16));
+            System.out.println("temperature :" + t );
+            System.out.println("Wind speed :" +v);
+            System.out.println("Wind Chill :" +w);
+        }
+    }
     }
 
-        }
+        
     
     
     
