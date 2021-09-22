@@ -7,23 +7,22 @@ public class BasicAndFunctional {
     {
         //Create an object of scanner class
         Scanner sc=new Scanner(System.in);
-        System.out.println("enter  number 1 : ");
+        System.out.println("enter  Value 1 and Value 2 : ");
         int Num1=sc.nextInt();
-        System.out.println("enter  number 2 : ");
         int Num2=sc.nextInt();
 
         QuotientRemainder(Num1,Num2);
-
     }
-
-
-    static void QuotientRemainder(int Num1,int Num2)
+    static void QuotientRemainder(int a,int b)
     {
-        int quotient = Num1/Num2;
-        int remainder = Num1%Num2;
-
-        System.out.println("the quotient is : " +quotient );
-        System.out.println("the remainder is : "+remainder);
+        int t;
+        t=a;
+        a=b;
+        b=t;
+        System.out.println();
+        System.out.println("after swapping " +a+" " +b);
     }
-}
+
+    }
+
 
