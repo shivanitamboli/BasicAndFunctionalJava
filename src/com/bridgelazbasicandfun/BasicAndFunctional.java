@@ -7,23 +7,23 @@ public class BasicAndFunctional {
     {
         //Create an object of scanner class
         Scanner sc=new Scanner(System.in);
-        System.out.println("enter  number : ");
-        int Num=sc.nextInt();
-        primeFactors(Num);
-    }
-    static void primeFactors(int n)
-    {
-        System.out.print(" Prime Factors of " + n + " are : ");
-        for (int i = 2; i < n; i++) {
-            while (n % i == 0) {
-                System.out.println(i + " ");
-                n = n / i;
-            }
-        }
-        if (n > 2) {
-            System.out.println(n);
+        System.out.println("enter  number 1 : ");
+        int Num1=sc.nextInt();
+        System.out.println("enter  number 2 : ");
+        int Num2=sc.nextInt();
 
-        }
+        QuotientRemainder(Num1,Num2);
+
+    }
+
+
+    static void QuotientRemainder(int Num1,int Num2)
+    {
+        int quotient = Num1/Num2;
+        int remainder = Num1%Num2;
+
+        System.out.println("the quotient is : " +quotient );
+        System.out.println("the remainder is : "+remainder);
     }
 }
 
