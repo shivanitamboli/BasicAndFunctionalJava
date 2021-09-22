@@ -3,42 +3,27 @@ package com.bridgelazbasicandfun;
 import java.util.Scanner;
 
 public class BasicAndFunctional {
-		public static void main(String[] args)
-	    {
-	        //create object of Scanner class
-	        Scanner sc=new Scanner(System.in);
-	        System.out.println("Enter any number : ");
-	        int Num=sc.nextInt();
-	        harmonicNumber(Num);
-
-	    }
-
-	    static void harmonicNumber(int n)
-	    { double sumHr=0;
-	        if(n!=0)
-	        {
-	            for (int i = 1; i <= n; i++)
-	            {
-	                sumHr=sumHr+(1.0/i);
-	                if(i==1)
-	                {
-	                    System.out.print("1/"+i+" ");
-	                }
-	                else
-	                {
-	                    System.out.print(" + "+"1/"+i);
-	                }
-
-
-	            }
-	            System.out.println();
-	            System.out.println("The number harmonic value is = "+ sumHr);
-	        }
-	        else
-	        {
-	            System.out.println("Number greater than zero");
-	        }
-	    }
-
+	public static void main(String[] args)
+    {
+        //Create an object of scanner class
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter  number : ");
+        int Num=sc.nextInt();
+        primeFactors(Num);
     }
+    static void primeFactors(int n)
+    {
+        System.out.print(" Prime Factors of " + n + " are : ");
+        for (int i = 2; i < n; i++) {
+            while (n % i == 0) {
+                System.out.println(i + " ");
+                n = n / i;
+            }
+        }
+        if (n > 2) {
+            System.out.println(n);
+
+        }
+    }
+}
 
