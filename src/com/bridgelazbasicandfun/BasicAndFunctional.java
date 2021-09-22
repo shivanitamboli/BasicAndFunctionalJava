@@ -4,25 +4,24 @@ import java.util.Scanner;
 
 public class BasicAndFunctional {
 	public static void main(String[] args) {
-        double v, t;
+        double a,b,c;
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter temperature in Fahrenheit");
-        t = sc.nextDouble();
-        System.out.println("Enter wind speed");
-        v = sc.nextDouble();
-        windchill(t, v);
-        sc.close();
+        System.out.println("Enter value a :");
+        a = sc.nextInt();
+        System.out.println("Enter value b :");
+        b = sc.nextInt();
+        System.out.println("Enter value c :");
+        c = sc.nextInt();
+        quadraticCal(a,b,c);
     }
-
-    public static void windchill(double t, double v) {
-        if (t > 50 || v < 3 || v > 120)
-            System.out.println("Invalid Input Please " +
-                    "Enter tem below 50 and wind above 3 and below 120");
-        else {
-            double w = 35.74 + 0.6215 * t + ((0.4275 * t - 35.75) * Math.pow(v, 0.16));
-            System.out.println("temperature :" + t );
-            System.out.println("Wind speed :" +v);
-            System.out.println("Wind Chill :" +w);
+    public static void quadraticCal(double a, double b, double c){
+        // print the roots of quadratic equation
+        double delta = (b * b) - (4 * a * c);
+        if (delta > 0.0){
+            double r1 = (-b + Math.sqrt(delta)) / (2 * a);
+            double r2 = (-b - Math.sqrt(delta)) / (2 * a);
+            System.out.println("Root 1 is : " +r1);
+            System.out.println("Root 2 is : " +r2);
         }
     }
     }
