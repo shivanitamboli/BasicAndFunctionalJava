@@ -7,16 +7,19 @@ public class BasicAndFunctional {
     {
         //Create an object of scanner class
         Scanner sc=new Scanner(System.in);
-        System.out.println("enter Number : ");
-        int Num1=sc.nextInt();
-        evenOdd(Num1);
+        System.out.println("enter Alphabet : ");
+        char Alp = sc.next().charAt(0);
+        vowelConsonant(Alp);
     }
-    static void evenOdd(int Num)
+    static void vowelConsonant(char Alp)
     {
-        if (Num%2 == 0){
-            System.out.println("Even Number :" +Num);
-        }else {
-            System.out.println("Odd Number : " +Num);
+        if (Alp == 'a' || Alp == 'e' || Alp == 'i' || Alp == 'o' || Alp == 'u' || Alp == 'A' || Alp == 'E' || Alp == 'I'
+                || Alp == 'O' || Alp == 'U') {
+            System.out.println(Alp + " is vowel");
+        } else if ((Alp >= 'a' && Alp <= 'z') || (Alp >= 'A' && Alp <= 'Z')) {
+            System.out.println(Alp + " is consonant");
+        } else {
+            System.out.println(Alp + " is not an alphabet");
         }
     }
     }
