@@ -5,35 +5,22 @@ import java.util.Scanner;
 public class BasicAndFunctional {
 
 	public static void main(String[] args) {
-		//creating Scanner object class
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Number of time coin flip :");
-        int numberOfFlip = sc.nextInt();
-        //Ensure it is a positive integer.
-        if (numberOfFlip <= 0)
-            System.out.println("Please Enter Positive Number");
-        else
-            flipCoin(numberOfFlip);
-    }
-    public static void flipCoin(int numberOfFlip){
-        //initialize
-        int head = 0 , tail = 0;
-        double headPercent = 0, tailPercent = 0;
+	    Scanner sc = new Scanner(System.in);
+	    System.out.println("Enter Year Here : ");
+	    int Year = sc.nextInt();
+	    //Ensure it is a 4 digit number
+	    if(Year > 999 && Year < 9999)
+	        checkLeapYear(Year);
+	    else
+	        System.out.println("Enter 4 digit Year");
 
-        for (int i = 0; i < numberOfFlip; i++){
-            //using random Math to generating number
-            if (Math.random()<0.5)
-                head++;
-            else
-                tail++;
-        }
-        System.out.println("Head is :: " +head);
-        System.out.println("Tail is :: " +tail);
-        //checking percentage of head and tail
-        headPercent=(head*100)/numberOfFlip;
-        tailPercent=(tail*100)/numberOfFlip;
-        //print percentage of head and tail
-        System.out.println("percent of head is :: " +headPercent+ "percent of tail is :: " +tailPercent);
+	}
+	    public static void checkLeapYear(int Year){
+	        // Checking condition of leap year
+	        if ((Year % 4 == 0) && (Year % 100 != 0) || (Year %400 == 0 ) )
+	            System.out.println(+Year+ " is leap year ");
+	        else
+	            System.out.println(+Year+ " is not leap year");
 
 	}
 
